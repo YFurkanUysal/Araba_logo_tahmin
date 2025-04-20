@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import pandas as pd  # ✅ CSV için pandas ekledik
+import pandas as pd  
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -16,7 +16,7 @@ transform = transforms.Compose([
     transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])  # RGB için normalize
 ])
 
-dataset_root = 'C:/Users/yusuf/PycharmProjects/araba_logo_tahmin/arabadataset'
+dataset_root = 'DATASETİN YOLUNU YAZ'
 train_data = datasets.ImageFolder(os.path.join(dataset_root, 'train'), transform=transform)
 val_data = datasets.ImageFolder(os.path.join(dataset_root, 'valid'), transform=transform)
 
@@ -31,7 +31,7 @@ model = model.to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-# 📊 Loss'ları saklayacağımız liste
+
 train_losses = []
 
 # Eğitim döngüsü
