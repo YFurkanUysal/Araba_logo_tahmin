@@ -14,7 +14,7 @@ def predict_image(model, image_path, class_names):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
-        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])  # RGB için normalize
+        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5]) 
     ])
 
     image = Image.open(image_path).convert('RGB')
@@ -27,9 +27,9 @@ def predict_image(model, image_path, class_names):
 
 def main():
     # 🔧 Ayarlar
-    dataset_root = 'C:/Users/yusuf/PycharmProjects/araba_logo_tahmin/arabadataset'
-    model_path = 'araba_logosu_model.pth'
-    image_path = 'C:/Users\yusuf\PycharmProjects/araba_logo_tahmin\deneme2.png'  # Test etmek istediğin tam görsel yolu
+    dataset_root = 'buraya datasetin yolunu yaz'
+    model_path = 'buraya çıkan pth nin ismini yaz'
+    image_path = 'buraya deneyeceğin image'nin fotosunu yaz '  
 
     # 🎯 Sınıf isimlerini al
     class_names = os.listdir(os.path.join(dataset_root, 'train'))
